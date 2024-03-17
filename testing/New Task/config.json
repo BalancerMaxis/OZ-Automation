@@ -2,7 +2,7 @@
   "name": "Test Task",
   "paused": true,
   "trigger": {
-    "cron": "00 17 * * 5",
+    "cron": "00 17 * * 8",
     "type": "schedule"
   },
   "relayerId": "3c316a45-b450-48f9-8758-cfc389f78c25"
