@@ -1,0 +1,14 @@
+{
+  "autotaskId": "a459a3c7-a53f-4799-875a-7a62b8ffd2e4",
+  "actionId": "a459a3c7-a53f-4799-875a-7a62b8ffd2e4",
+  "name": "Gnosis Child Chain Gauges Checkpointer",
+  "paused": false,
+  "trigger": {
+    "cron": "*/5 * * * 4",
+    "type": "schedule"
+  },
+  "relayerId": "bb98b83a-9987-42f9-97b5-523715879e5f",
+  "codeDigest": "9jcTMMl7Yk6g1COpnAWWY4uFAXptdkxnZEi8c6Qu3og=",
+  "runtime": "nodejs16.x",
+  "dependenciesVersion": "v2023-05-05"
+}

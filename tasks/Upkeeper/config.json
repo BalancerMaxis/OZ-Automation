@@ -1,0 +1,14 @@
+{
+  "autotaskId": "3a76d925-b699-4c98-8075-b55debb3c0c4",
+  "actionId": "3a76d925-b699-4c98-8075-b55debb3c0c4",
+  "name": "Upkeeper",
+  "paused": false,
+  "trigger": {
+    "cron": "*/5 * * * *",
+    "type": "schedule"
+  },
+  "relayerId": "52eb3b72-2ea5-46a7-84e5-676099d00926",
+  "codeDigest": "1EL8RF2Fm7oUbdHkxKhDGh7ygBeL0+jaRBVGB1rV3Hw=",
+  "runtime": "nodejs16.x",
+  "dependenciesVersion": "v2023-07-11"
+}

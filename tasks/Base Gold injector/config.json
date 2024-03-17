@@ -1,0 +1,14 @@
+{
+  "autotaskId": "2ac4ae24-2254-48fa-a660-ce90f941e1b6",
+  "actionId": "2ac4ae24-2254-48fa-a660-ce90f941e1b6",
+  "name": "Base Gold injector",
+  "paused": false,
+  "trigger": {
+    "frequencyMinutes": 5,
+    "type": "schedule"
+  },
+  "relayerId": "414cd4cd-e93d-49bc-b332-5da7e3460a80",
+  "codeDigest": "rXprVAKp0T7Lc46Ao6+azUQSkdDH7sS5P0g7sk2mkZY=",
+  "runtime": "nodejs16.x",
+  "dependenciesVersion": "v2023-08-17"
+}

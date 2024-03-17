@@ -1,0 +1,14 @@
+{
+  "autotaskId": "48ff8867-f59b-4b6e-9a56-c3f8388f6b32",
+  "actionId": "48ff8867-f59b-4b6e-9a56-c3f8388f6b32",
+  "name": "Base USDC injector",
+  "paused": false,
+  "trigger": {
+    "frequencyMinutes": 5,
+    "type": "schedule"
+  },
+  "relayerId": "414cd4cd-e93d-49bc-b332-5da7e3460a80",
+  "codeDigest": "2qeum26UUaDZAKcX+/aeiZ5JCibFTGg2N+T8fAciv5I=",
+  "runtime": "nodejs16.x",
+  "dependenciesVersion": "v2023-08-17"
+}

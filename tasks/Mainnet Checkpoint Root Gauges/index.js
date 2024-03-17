@@ -3,9 +3,9 @@ const {
     DefenderRelayProvider,
 } = require('defender-relay-client/lib/ethers')
 const ethers = require('ethers')
-const {KeyValueStoreClient} = require('defender-kvstore-client');
-const {AutotaskClient} = require('defender-autotask-client');
-const {BigNumber} = require('ethers');
+const { KeyValueStoreClient } = require('defender-kvstore-client');
+const { AutotaskClient } = require('defender-autotask-client');
+const { BigNumber } = require('ethers');
 
 
 const AUTOTASK_ID = '621b7001-fdb7-4780-96eb-d0f87aaadd84';
@@ -29,7 +29,7 @@ const GAUGE_CHECKPOINTER_ABI = `[{"inputs":[{"internalType":"contract IGaugeAdde
 
 // function to send notifications
 async function sendNotification(context, _subject, _message) {
-    const {notificationClient} = context;
+    const { notificationClient } = context;
     try {
         notificationClient.send({
             channelAlias: '#defender-alerts',
@@ -43,13 +43,10 @@ async function sendNotification(context, _subject, _message) {
 
 // Entrypoint for the Autotask
 exports.handler = async function (credentials, context) {
-    const autotaskClient = new AutotaskClient({
-        apiKey: credentials.secrets.apiKey,
-        apiSecret: credentials.secrets.apiSecret
-    });
+    const autotaskClient = new AutotaskClient({ apiKey: credentials.secrets.apiKey, apiSecret: credentials.secrets.apiSecret });
     let autotaskMetadata = await autotaskClient.get(AUTOTASK_ID);
     const provider = new DefenderRelayProvider(credentials);
-    const signer = new DefenderRelaySigner(credentials, provider, {speed: 'average'});
+    const signer = new DefenderRelaySigner(credentials, provider, { speed: 'average' });
     const checkpointerContract = new ethers.Contract(GAUGE_CHECKPOINTER_ADDRESS, GAUGE_CHECKPOINTER_ABI, signer);
     console.log('Checkpointing threshold: ', CHECKPOINTING_THRESHOLD, ' = ', ethers.utils.formatEther(CHECKPOINTING_THRESHOLD) * 100, '%');
 
@@ -98,10 +95,7 @@ exports.handler = async function (credentials, context) {
 
         try {
             // checkpoint gauges; if successful, notify and store checkpointed type in KV store
-            const tx = await checkpointerContract.connect(signer).checkpointGaugesOfTypesAboveRelativeWeight(typesToCheckpoint, BigNumber.from(CHECKPOINTING_THRESHOLD).mul(checkpointingThresholdMultiplier), {
-                gasLimit: gasLimit,
-                value: bridgeCost
-            });
+            const tx = await checkpointerContract.connect(signer).checkpointGaugesOfTypesAboveRelativeWeight(typesToCheckpoint, BigNumber.from(CHECKPOINTING_THRESHOLD).mul(checkpointingThresholdMultiplier), {gasLimit: gasLimit, value: bridgeCost});
             console.log(tx);
             if (checkpointingThresholdMultiplier == 1) {
                 sendNotification(
@@ -166,11 +160,8 @@ exports.handler = async function (credentials, context) {
 // To run locally (this code will not be executed in Autotasks)
 if (require.main === module) {
     require('dotenv').config();
-    const {API_KEY: apiKey, API_SECRET: apiSecret} = process.env;
-    exports.handler({apiKey, apiSecret})
+    const { API_KEY: apiKey, API_SECRET: apiSecret } = process.env;
+    exports.handler({ apiKey, apiSecret })
         .then(() => process.exit(0))
-        .catch(error => {
-            console.error(error);
-            process.exit(1);
-        });
+        .catch(error => { console.error(error); process.exit(1); });
 }
