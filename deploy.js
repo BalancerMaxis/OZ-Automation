@@ -5,8 +5,8 @@ const JSZip = require("jszip");
 require('dotenv').config();
 
 const client = new AutotaskClient({
-    apiKey: process.env.API_KEY,
-    apiSecret: process.env.API_SECRET
+    apiKey: process.env.DEFENDER_API_KEY,
+    apiSecret: process.env.DEFENDER_API_SECRET
 });
 
 async function createFoldersAndConfigs(items) {
