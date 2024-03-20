@@ -1,13 +1,13 @@
 {
-  "autotaskId": "9f1f5269-03c6-4830-b0aa-30c99e14bbd7",
-  "actionId": "9f1f5269-03c6-4830-b0aa-30c99e14bbd7",
+  "autotaskId": "661f142b-eb49-4d7a-b9e6-658f90d4939b",
+  "actionId": "661f142b-eb49-4d7a-b9e6-658f90d4939b",
   "name": "Mainnet low gas warning",
   "paused": true,
   "trigger": {
     "cron": "0 * * * *",
     "type": "schedule"
   },
-  "codeDigest": "tPHI7l11ePU/k4jl4wXCsxw10QievEcbczeqM3icDb0=",
+  "codeDigest": "gI/sNora1g4Pqd3SMhZPZUIoioYFWl8xX2SqhJ6bje4=",
   "runtime": "nodejs16.x",
-  "dependenciesVersion": "v2023-05-05"
+  "dependenciesVersion": "v2024-01-18"
 }

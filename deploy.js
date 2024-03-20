@@ -27,13 +27,14 @@ async function createFoldersAndConfigs(items) {
 }
 
 async function updateAndCreateTasks() {
-    const baseDirectory = path.join(__dirname, 'testing');
+    const baseDirectory = path.join(__dirname, 'tasks');
 
     try {
         const directories = await fs.readdir(baseDirectory, {withFileTypes: true});
         const folders = directories.filter(dirent => dirent.isDirectory()).map(dirent => dirent.name);
 
         for (const folder of folders) {
+            console.log("Deploying: ", folder)
             let configData;
             let autotaskId;
 
@@ -58,19 +59,31 @@ async function updateAndCreateTasks() {
                 zip.file("index.js", indexFile);
                 const zippedContent = await zip.generateAsync({type: "nodebuffer"});
                 configData.encodedZippedCode = zippedContent.toString('base64');
-                await client.create(configData);
+                try {
+                    const createdTask = await client.create(configData);
+                    console.log(createdTask)
+                } catch (e) {
+                    console.log(e);
+                }
             } else {
                 // update task
-                await client.update(configData);
-                await client.updateCodeFromSources(autotaskId, {'index.js': indexFile});
+                try {
+                    await client.update(configData);
+                    await client.updateCodeFromSources(autotaskId, {'index.js': indexFile});
+                } catch (e) {
+                    console.log(e);
+                }
             }
-
         }
-    } catch (err) {
-        console.error('Error creating base directory:', err);
+    } catch
+        (err) {
+        console.error('Error updating tasks:', err);
     }
 }
 
 (async () => {
     await updateAndCreateTasks();
+    const items = await client.list();
+    console.log(await client.list());
+    await createFoldersAndConfigs(items.items);
 })().catch(console.error);

@@ -1,14 +1,13 @@
 {
-  "autotaskId": "92eba4ba-d504-44ed-8e37-5f837ed520a0",
-  "actionId": "92eba4ba-d504-44ed-8e37-5f837ed520a0",
+  "autotaskId": "f1a6359c-35f4-4bbc-8203-7d7261c08bb4",
+  "actionId": "f1a6359c-35f4-4bbc-8203-7d7261c08bb4",
   "name": "Optimism Child Chain Gauges Checkpointer",
   "paused": true,
   "trigger": {
     "cron": "*/5 * * * 4",
     "type": "schedule"
   },
-  "relayerId": "3b40278b-01e3-4f45-ad09-83679f1f699d",
-  "codeDigest": "xiNUTsOY7GVZ94+0rF7Anpf2qArHEZQeSxTTnxseqJs=",
+  "codeDigest": "Yqt/n5vIgY/veuayUYjYvLIKolXAgzgFsxlK1SsU8kI=",
   "runtime": "nodejs16.x",
-  "dependenciesVersion": "v2023-05-05"
+  "dependenciesVersion": "v2024-01-18"
 }

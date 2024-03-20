@@ -1,14 +1,14 @@
 {
-  "autotaskId": "2ac4ae24-2254-48fa-a660-ce90f941e1b6",
-  "actionId": "2ac4ae24-2254-48fa-a660-ce90f941e1b6",
+  "autotaskId": "f14cefef-22d0-41c4-af9f-34272ca7cefc",
+  "actionId": "f14cefef-22d0-41c4-af9f-34272ca7cefc",
   "name": "Base Gold injector",
   "paused": false,
   "trigger": {
     "frequencyMinutes": 5,
     "type": "schedule"
   },
-  "relayerId": "414cd4cd-e93d-49bc-b332-5da7e3460a80",
-  "codeDigest": "rXprVAKp0T7Lc46Ao6+azUQSkdDH7sS5P0g7sk2mkZY=",
+  "relayerId": "384e11fa-9222-4556-9f93-add1fef65f83",
+  "codeDigest": "+I09NvYvXr8Ga5N8hHQBeKu6IaDgKGHqvXavDE4ZflE=",
   "runtime": "nodejs16.x",
-  "dependenciesVersion": "v2023-08-17"
+  "dependenciesVersion": "v2024-01-18"
 }
