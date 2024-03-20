@@ -1,14 +1,14 @@
 {
-  "autotaskId": "dea0c51a-ce57-4741-b8f8-28d26ff44b8a",
-  "actionId": "dea0c51a-ce57-4741-b8f8-28d26ff44b8a",
+  "autotaskId": "5f594061-7ad5-416f-a487-4a12d06359c0",
+  "actionId": "5f594061-7ad5-416f-a487-4a12d06359c0",
   "name": "Arbitrum Gauge Reward Checkpointer",
   "paused": true,
   "trigger": {
     "cron": "00 17 * * 5",
     "type": "schedule"
   },
-  "relayerId": "3c316a45-b450-48f9-8758-cfc389f78c25",
-  "codeDigest": "YCVjiYi+8U9eQivyKkf6PvSWZkuGT86iuOZVGU/oCsk=",
+  "relayerId": "0b7807ed-ce8d-476b-8598-040c296adfba",
+  "codeDigest": "xaMiaYRO3Peq0qAH+AL59fNEJiLSEgZBRMB0wjl5nFM=",
   "runtime": "nodejs16.x",
-  "dependenciesVersion": "v2023-11-22"
+  "dependenciesVersion": "v2024-01-18"
 }

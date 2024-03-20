@@ -1,14 +1,14 @@
 {
-  "autotaskId": "c06b6a93-5c7b-4511-a6e5-7753f0edd77e",
-  "actionId": "c06b6a93-5c7b-4511-a6e5-7753f0edd77e",
+  "autotaskId": "d9fb7ef7-9f3c-4006-bce5-ac40472ebb46",
+  "actionId": "d9fb7ef7-9f3c-4006-bce5-ac40472ebb46",
   "name": "Base gas station keeper",
   "paused": false,
   "trigger": {
     "frequencyMinutes": 5,
     "type": "schedule"
   },
-  "relayerId": "414cd4cd-e93d-49bc-b332-5da7e3460a80",
-  "codeDigest": "v4xsy6Ad4i9VIjR4ZkLSXxikK9DiQVoFG0/Ir3wJDoM=",
+  "relayerId": "384e11fa-9222-4556-9f93-add1fef65f83",
+  "codeDigest": "nZzP0/rHprctZIxZMXQh+4/8ZWN2AfPXu4q9IjDcaFE=",
   "runtime": "nodejs16.x",
-  "dependenciesVersion": "v2023-08-17"
+  "dependenciesVersion": "v2024-01-18"
 }

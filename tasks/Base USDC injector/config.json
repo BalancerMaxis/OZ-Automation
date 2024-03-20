@@ -1,14 +1,14 @@
 {
-  "autotaskId": "48ff8867-f59b-4b6e-9a56-c3f8388f6b32",
-  "actionId": "48ff8867-f59b-4b6e-9a56-c3f8388f6b32",
+  "autotaskId": "81a0a1cb-7c96-469a-ae03-0d25e3dd9b0f",
+  "actionId": "81a0a1cb-7c96-469a-ae03-0d25e3dd9b0f",
   "name": "Base USDC injector",
   "paused": false,
   "trigger": {
     "frequencyMinutes": 5,
     "type": "schedule"
   },
-  "relayerId": "414cd4cd-e93d-49bc-b332-5da7e3460a80",
-  "codeDigest": "2qeum26UUaDZAKcX+/aeiZ5JCibFTGg2N+T8fAciv5I=",
+  "relayerId": "384e11fa-9222-4556-9f93-add1fef65f83",
+  "codeDigest": "NhgU0ks7i/bkZ6S/CmOvSlDzFV/o4M7zcZBNLsue9YU=",
   "runtime": "nodejs16.x",
-  "dependenciesVersion": "v2023-08-17"
+  "dependenciesVersion": "v2024-01-18"
 }

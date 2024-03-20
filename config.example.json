@@ -1,0 +1,10 @@
+{
+  "name": "Your task name",
+  "paused": false,
+  "trigger": {
+    "cron": "*/5 * * * 4",
+    "type": "schedule"
+  },
+  "relayerId": "Find your Relayer Id on OZ",
+  "runtime": "nodejs16.x"
+}

@@ -1,14 +1,14 @@
 {
-  "autotaskId": "3a76d925-b699-4c98-8075-b55debb3c0c4",
-  "actionId": "3a76d925-b699-4c98-8075-b55debb3c0c4",
+  "autotaskId": "63fc9064-9f27-4dca-aa8d-25acbe0545c3",
+  "actionId": "63fc9064-9f27-4dca-aa8d-25acbe0545c3",
   "name": "Upkeeper",
   "paused": false,
   "trigger": {
     "cron": "*/5 * * * *",
     "type": "schedule"
   },
-  "relayerId": "52eb3b72-2ea5-46a7-84e5-676099d00926",
-  "codeDigest": "1EL8RF2Fm7oUbdHkxKhDGh7ygBeL0+jaRBVGB1rV3Hw=",
+  "relayerId": "003ec47a-7c81-4572-af06-2943fead4af2",
+  "codeDigest": "6gn2ZOaQkmqxMX5bwg5y0KkwMDkwVhpwouMTHE7aZxI=",
   "runtime": "nodejs16.x",
-  "dependenciesVersion": "v2023-07-11"
+  "dependenciesVersion": "v2024-01-18"
 }
