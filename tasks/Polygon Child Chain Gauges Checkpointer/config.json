@@ -2,13 +2,13 @@
   "autotaskId": "7e7520f3-49b5-4c9b-93de-a328bf154905",
   "actionId": "7e7520f3-49b5-4c9b-93de-a328bf154905",
   "name": "Polygon Child Chain Gauges Checkpointer",
-  "paused": false,
+  "paused": true,
   "trigger": {
     "cron": "*/5 * * * 4",
     "type": "schedule"
   },
   "relayerId": "8735c61b-7c5b-48ac-a088-cc727adcb016",
-  "codeDigest": "jCl67eMtmBigzBPDm4JOze3YyNvHFY9VIhK8GLCcimA=",
+  "codeDigest": "CziKvKqEnFERHBJ6FzMNmQ/A+hzLM5IVg3F7hjT49OQ=",
   "runtime": "nodejs16.x",
   "dependenciesVersion": "v2024-01-18"
 }
