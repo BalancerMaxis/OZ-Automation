@@ -1,11 +1,14 @@
 {
+  "autotaskId": "33ac8833-3ef8-448b-aecc-6721b236fb90",
+  "actionId": "33ac8833-3ef8-448b-aecc-6721b236fb90",
   "name": "bb-a-WETH Rebalancer",
   "paused": true,
   "trigger": {
-    "cron": "*/5 * * * *",
-    "type": "schedule"
+    "type": "schedule",
+    "cron": "*/5 * * * *"
   },
   "relayerId": "003ec47a-7c81-4572-af06-2943fead4af2",
+  "codeDigest": "8xGaGZ38HTYAWrBGhNOCt7Ak27l1TJfN61J05Cc1TTA=",
   "runtime": "nodejs16.x",
   "dependenciesVersion": "v2024-01-18"
 }

@@ -1,10 +1,13 @@
 {
+  "autotaskId": "e6189ecb-c6e5-4dbf-bf2c-555635625b0a",
+  "actionId": "e6189ecb-c6e5-4dbf-bf2c-555635625b0a",
   "name": "Optimism Child Chain Gauges Checkpointer",
   "paused": true,
   "trigger": {
-    "cron": "*/5 * * * 4",
-    "type": "schedule"
+    "type": "schedule",
+    "cron": "*/5 * * * 4"
   },
+  "codeDigest": "jU0mSSXMXdYYDj3Po+8IJc8x5f24YTdFCECQxT/z3b4=",
   "runtime": "nodejs16.x",
   "dependenciesVersion": "v2024-01-18"
 }
