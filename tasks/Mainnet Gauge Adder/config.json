@@ -2,13 +2,13 @@
   "autotaskId": "cfe6feab-559d-4264-b98b-ac83a5209f5b",
   "actionId": "cfe6feab-559d-4264-b98b-ac83a5209f5b",
   "name": "Mainnet Gauge Adder",
-  "paused": false,
+  "paused": true,
   "trigger": {
     "cron": "0 0 * * 2",
     "type": "schedule"
   },
   "relayerId": "003ec47a-7c81-4572-af06-2943fead4af2",
-  "codeDigest": "GjH1Scr2qNZ35FuEM++cJc5c+uGkVtT2pN84Hb3Skx4=",
+  "codeDigest": "oA21ud3jXzjMESAl+93egFYCDkTuNilY/ZroaEma/vw=",
   "runtime": "nodejs16.x",
   "dependenciesVersion": "v2024-01-18"
 }

@@ -2,13 +2,13 @@
   "autotaskId": "79d97e00-0c3d-4279-afd4-27acd287df80",
   "actionId": "79d97e00-0c3d-4279-afd4-27acd287df80",
   "name": "Arbitrum Child Chain Gauges Checkpointer",
-  "paused": false,
+  "paused": true,
   "trigger": {
     "cron": "*/5 * * * 4",
     "type": "schedule"
   },
   "relayerId": "0b7807ed-ce8d-476b-8598-040c296adfba",
-  "codeDigest": "ArfkaiXD7OXzl/kClQgB/s9zsxWrkzx3pZ5y+8pL5C4=",
+  "codeDigest": "JMWRPo04O1RZNDyU2qGQ4YTmvagGWaHu49fvuNBVgSU=",
   "runtime": "nodejs16.x",
   "dependenciesVersion": "v2024-01-18"
 }
