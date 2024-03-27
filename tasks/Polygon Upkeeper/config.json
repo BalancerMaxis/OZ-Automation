@@ -1,6 +1,4 @@
 {
-  "autotaskId": "c316e74d-72e5-45b9-a332-c8475a3036c3",
-  "actionId": "c316e74d-72e5-45b9-a332-c8475a3036c3",
   "name": "Polygon Upkeeper",
   "paused": true,
   "trigger": {
@@ -8,7 +6,6 @@
     "frequencyMinutes": 5
   },
   "relayerId": "8735c61b-7c5b-48ac-a088-cc727adcb016",
-  "codeDigest": "B3lRx9AgKP9V7F+ERJjE9TxIwdBvnQf1XrG3eORdfJc=",
   "runtime": "nodejs16.x",
   "dependenciesVersion": "v2024-01-18"
 }
