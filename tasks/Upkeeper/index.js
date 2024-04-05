@@ -67,7 +67,7 @@ exports.handler = async function (credentials, context) {
                 const { notificationClient } = context;
                 try {
                     notificationClient.send({
-                        channelAlias: '#defender-alerts',
+                        channelAlias: 'Hal Maxi Bot (tg)',
                         subject: 'Upkeep performed',
                         message: 'Transaction hash: ' + tx.hash
                     });

@@ -2,7 +2,7 @@
   "autotaskId": "1ac6168d-4003-4576-afc0-1e9179d2bf27",
   "actionId": "1ac6168d-4003-4576-afc0-1e9179d2bf27",
   "name": "Base Child Chain Gauges Checkpointer",
-  "paused": true,
+  "paused": false,
   "trigger": {
     "type": "schedule",
     "cron": "*/5 * * * 4"

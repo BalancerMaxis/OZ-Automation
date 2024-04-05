@@ -2,7 +2,7 @@
   "autotaskId": "c673b877-b48b-44a5-90e0-d0717dc8e3c8",
   "actionId": "c673b877-b48b-44a5-90e0-d0717dc8e3c8",
   "name": "Base Upkeeper",
-  "paused": true,
+  "paused": false,
   "trigger": {
     "type": "schedule",
     "frequencyMinutes": 5
