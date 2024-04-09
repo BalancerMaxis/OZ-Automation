@@ -3,12 +3,10 @@ const {
     DefenderRelayProvider,
 } = require('defender-relay-client/lib/ethers')
 const ethers = require('ethers')
-const { KeyValueStoreClient } = require('defender-kvstore-client');
-const { AutotaskClient } = require('defender-autotask-client');
+const { KeyValueStoreClient } = require('@openzeppelin/defender-kvstore-client');
+const {AutotaskClient} = require('@openzeppelin/defender-autotask-client')
 const { BigNumber } = require('ethers');
 
-
-const AUTOTASK_ID = '621b7001-fdb7-4780-96eb-d0f87aaadd84';
 const autotaskRetrySchedule = {
     type: 'schedule',
     frequencyMinutes: 5,
@@ -32,7 +30,7 @@ async function sendNotification(context, _subject, _message) {
     const { notificationClient } = context;
     try {
         notificationClient.send({
-            channelAlias: '#defender-alerts',
+            channelAlias: 'Hal Maxi Bot (tg)',
             subject: _subject,
             message: _message
         });
@@ -44,7 +42,7 @@ async function sendNotification(context, _subject, _message) {
 // Entrypoint for the Autotask
 exports.handler = async function (credentials, context) {
     const autotaskClient = new AutotaskClient({ apiKey: credentials.secrets.apiKey, apiSecret: credentials.secrets.apiSecret });
-    let autotaskMetadata = await autotaskClient.get(AUTOTASK_ID);
+    let autotaskMetadata = await autotaskClient.get(credentials.autotaskId);
     const provider = new DefenderRelayProvider(credentials);
     const signer = new DefenderRelaySigner(credentials, provider, { speed: 'average' });
     const checkpointerContract = new ethers.Contract(GAUGE_CHECKPOINTER_ADDRESS, GAUGE_CHECKPOINTER_ABI, signer);
