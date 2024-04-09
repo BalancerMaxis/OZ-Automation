@@ -1,11 +1,11 @@
 {
   "autotaskId": "06306db9-3616-4c71-a223-952a1b6bb5a5",
   "actionId": "06306db9-3616-4c71-a223-952a1b6bb5a5",
-  "name": "Upkeeper",
+  "name": "LZ Rate Updater",
   "paused": true,
   "trigger": {
     "type": "schedule",
-    "cron": "*/5 * * * *"
+    "cron": "26 10 * * *"
   },
   "relayerId": "003ec47a-7c81-4572-af06-2943fead4af2",
   "codeDigest": "Zsv0wp0FLgzu+e+DsLyWB84ox08dJ1UTD/RKT0xkuuM=",
