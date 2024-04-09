@@ -1,4 +1,6 @@
 {
+  "autotaskId": "04fb6b35-970a-42e5-aa1d-b8da6bfe3e01",
+  "actionId": "04fb6b35-970a-42e5-aa1d-b8da6bfe3e01",
   "name": "Gnosis Upkeeper",
   "paused": true,
   "trigger": {
@@ -6,6 +8,7 @@
     "frequencyMinutes": 5
   },
   "relayerId": "df853bf7-3ccc-4461-9b20-cd4a1caf475a",
+  "codeDigest": "uP+1+rtXwu2EiYyyj8zqyWN+HRSqwcnXawxmFVcSXfM=",
   "runtime": "nodejs16.x",
   "dependenciesVersion": "v2024-01-18"
 }

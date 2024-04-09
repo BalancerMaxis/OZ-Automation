@@ -1,11 +1,14 @@
 {
+  "autotaskId": "c673b877-b48b-44a5-90e0-d0717dc8e3c8",
+  "actionId": "c673b877-b48b-44a5-90e0-d0717dc8e3c8",
   "name": "Base Upkeeper",
   "paused": true,
   "trigger": {
-    "frequencyMinutes": 5,
-    "type": "schedule"
+    "type": "schedule",
+    "frequencyMinutes": 5
   },
   "relayerId": "384e11fa-9222-4556-9f93-add1fef65f83",
+  "codeDigest": "f7wMIthKjbdpxhZ4qzyThaXjk0+OIMc7UAs75M/o71o=",
   "runtime": "nodejs16.x",
   "dependenciesVersion": "v2024-01-18"
 }

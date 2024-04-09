@@ -1,4 +1,6 @@
 {
+  "autotaskId": "e49339e1-6460-432b-98f2-36eec5a6f822",
+  "actionId": "e49339e1-6460-432b-98f2-36eec5a6f822",
   "name": "Arbitrum Upkeeper",
   "paused": true,
   "trigger": {
@@ -6,6 +8,7 @@
     "frequencyMinutes": 5
   },
   "relayerId": "0b7807ed-ce8d-476b-8598-040c296adfba",
+  "codeDigest": "kxK24KoX1ULGqFqkw/zoFxTX+eoYSnXzorBphcCB2ME=",
   "runtime": "nodejs16.x",
   "dependenciesVersion": "v2024-01-18"
 }

@@ -1,11 +1,14 @@
 {
+  "autotaskId": "88c131f8-7701-49a8-bca3-416287624592",
+  "actionId": "88c131f8-7701-49a8-bca3-416287624592",
   "name": "Mainnet Checkpoint Root Gauges",
   "paused": true,
   "trigger": {
-    "cron": "5 0 * * 4",
-    "type": "schedule"
+    "type": "schedule",
+    "cron": "5 0 * * 4"
   },
   "relayerId": "003ec47a-7c81-4572-af06-2943fead4af2",
+  "codeDigest": "Ji4WBESoA6W0UplYAV+eWJC7F7QvE36Pje35WWuMpQE=",
   "runtime": "nodejs16.x",
   "dependenciesVersion": "v2024-01-18"
 }

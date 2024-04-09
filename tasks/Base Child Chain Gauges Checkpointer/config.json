@@ -1,11 +1,14 @@
 {
+  "autotaskId": "1ac6168d-4003-4576-afc0-1e9179d2bf27",
+  "actionId": "1ac6168d-4003-4576-afc0-1e9179d2bf27",
   "name": "Base Child Chain Gauges Checkpointer",
-  "paused": true,
+  "paused": false,
   "trigger": {
-    "cron": "*/5 * * * 4",
-    "type": "schedule"
+    "type": "schedule",
+    "cron": "*/5 * * * 4"
   },
   "relayerId": "384e11fa-9222-4556-9f93-add1fef65f83",
+  "codeDigest": "krMhOf13OKVOtK+V2UBvA7GWjIZzhDAtnL4mLuDWfn8=",
   "runtime": "nodejs16.x",
   "dependenciesVersion": "v2024-01-18"
 }

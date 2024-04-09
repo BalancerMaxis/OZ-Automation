@@ -1,4 +1,6 @@
 {
+  "autotaskId": "bfff4349-de3e-4f30-981d-7ce3c7bbc7cf",
+  "actionId": "bfff4349-de3e-4f30-981d-7ce3c7bbc7cf",
   "name": "Avalanche Upkeeper",
   "paused": true,
   "trigger": {
@@ -6,6 +8,7 @@
     "frequencyMinutes": 5
   },
   "relayerId": "73e57662-7a23-462e-96ce-40810292a07f",
+  "codeDigest": "vfZq5JKNEAXDySI+Snj8ePoSaClDwrEZ4TPS6FqqR18=",
   "runtime": "nodejs16.x",
   "dependenciesVersion": "v2024-01-18"
 }
