@@ -51,11 +51,11 @@ exports.handler = async function (credentials, context) {
         const contract = new ethers.Contract(rateProvider, LZ_RATE_PROVIDER__ABI, signer);
 
         const lastRun = await contract.connect(signer).lastUpdated();
-        console.log("Last run: ", lastRun)
+        console.log("Last run: ", lastRun.toString())
         const deltaT = Date.now() / 1000 - lastRun;
-        // calculate the delay in poking the relayer considering we can only poke after 24 hours
+        // calculate the delay in poking the rate provider considering we can only poke after 24 hours
         const delay = deltaT - 60 * 60 * 24;
-        console.log("Delay: ", delay);
+        console.log("Delay: ", delay.toString());
 
         if (delay < 0) {
             autotaskMetadata.trigger = autotaskRetrySchedule;
