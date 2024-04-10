@@ -15,7 +15,7 @@ const RATE_PROVIDERS = ['0xB385BBc8Bfc80451cDbB6acfFE4D95671f4C051c', '0xaD78CD1
 
 const autotaskRetrySchedule = {
     type: 'schedule',
-    frequencyMinutes: 5,
+    frequencyMinutes: 10,
 };
 
 const autotaskScheduleTrigger = {
@@ -46,6 +46,9 @@ exports.handler = async function (credentials, context) {
     let autotaskMetadata = await autotaskClient.get(credentials.autotaskId);
     const provider = new DefenderRelayProvider(credentials);
     const signer = new DefenderRelaySigner(credentials, provider, {speed: 'fast'});
+
+
+    let shouldScheduleTomorrow = true;
 
     for (let rateProvider of RATE_PROVIDERS) {
         const contract = new ethers.Contract(rateProvider, LZ_RATE_PROVIDER__ABI, signer);
@@ -85,20 +88,19 @@ exports.handler = async function (credentials, context) {
 
             if (context) {
                 await sendNotification(context, 'Rate updated for: ' + rateProvider, 'Transaction hash: ' + tx.hash)
-                autotaskMetadata.trigger = autotaskScheduleTrigger;
-                await autotaskClient.update(autotaskMetadata);
                 console.log('Autotask will run again next Tomorrow at 10:25 UTC');
             } else {
                 console.log('No context, not sending notification');
                 console.log('Rate updated: ' + tx.hash);
             }
         } else {
-            autotaskMetadata.trigger = autotaskRetrySchedule;
-            await autotaskClient.update(autotaskMetadata);
-            await sendNotification(context, 'LZ Rate Updater: Gas too high', 'Autotask will retry in 5 minutes')
+            shouldScheduleTomorrow = false;
+            await sendNotification(context, 'LZ Rate Updater: Gas too high', 'Autotask will retry in 10 minutes')
             console.log('Gas too high, current delay is ', delay / 3600, ' hours, willing to pay max ', ethers.utils.formatUnits(maxGasPrice, 'gwei'));
         }
     }
+    autotaskMetadata.trigger = shouldScheduleTomorrow ? autotaskScheduleTrigger : autotaskRetrySchedule;
+    await autotaskClient.update(autotaskMetadata);
 }
 
 async function sendNotification(context, _subject, _message) {
