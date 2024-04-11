@@ -2,7 +2,7 @@
   "autotaskId": "06306db9-3616-4c71-a223-952a1b6bb5a5",
   "actionId": "06306db9-3616-4c71-a223-952a1b6bb5a5",
   "name": "LZ Rate Updater",
-  "paused": true,
+  "paused": false,
   "trigger": {
     "type": "schedule",
     "cron": "15 11 * * *"

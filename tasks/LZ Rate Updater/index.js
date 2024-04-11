@@ -7,7 +7,7 @@ const {AutotaskClient} = require('@openzeppelin/defender-autotask-client')
 
 const LZ_RATE_PROVIDER__ABI = `[{"inputs":[{"internalType":"uint16","name":"_dstChainId","type":"uint16"},{"internalType":"address","name":"_layerZeroEndpoint","type":"address"}],"stateMutability":"nonpayable","type":"constructor"},{"anonymous":false,"inputs":[{"indexed":false,"internalType":"uint16","name":"newDstChainId","type":"uint16"}],"name":"DstChainIdUpdated","type":"event"},{"anonymous":false,"inputs":[{"indexed":false,"internalType":"address","name":"newLayerZeroEndpoint","type":"address"}],"name":"LayerZeroEndpointUpdated","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"previousOwner","type":"address"},{"indexed":true,"internalType":"address","name":"newOwner","type":"address"}],"name":"OwnershipTransferred","type":"event"},{"anonymous":false,"inputs":[{"indexed":false,"internalType":"address","name":"newRateReceiver","type":"address"}],"name":"RateReceiverUpdated","type":"event"},{"anonymous":false,"inputs":[{"indexed":false,"internalType":"uint256","name":"newRate","type":"uint256"}],"name":"RateUpdated","type":"event"},{"inputs":[],"name":"dstChainId","outputs":[{"internalType":"uint16","name":"","type":"uint16"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"getLatestRate","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"lastUpdated","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"layerZeroEndpoint","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"owner","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"rate","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"rateInfo","outputs":[{"internalType":"string","name":"tokenSymbol","type":"string"},{"internalType":"address","name":"tokenAddress","type":"address"},{"internalType":"string","name":"baseTokenSymbol","type":"string"},{"internalType":"address","name":"baseTokenAddress","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"rateReceiver","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"renounceOwnership","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"newOwner","type":"address"}],"name":"transferOwnership","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint16","name":"_dstChainId","type":"uint16"}],"name":"updateDstChainId","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"_layerZeroEndpoint","type":"address"}],"name":"updateLayerZeroEndpoint","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[],"name":"updateRate","outputs":[],"stateMutability":"payable","type":"function"},{"inputs":[{"internalType":"address","name":"_rateReceiver","type":"address"}],"name":"updateRateReceiver","outputs":[],"stateMutability":"nonpayable","type":"function"}]`
 
-const LOWER_GAS_PRICE = 15_000_000_000
+const LOWER_GAS_PRICE = 16_000_000_000
 const UPPER_GAS_PRICE = 100_000_000_000
 const ABSOLUTE_MAX_GAS_PRICE = 999_000_000_000
 const MAX_DELAY = 60 * 60 * 48 // 48 hours
@@ -15,7 +15,7 @@ const RATE_PROVIDERS = ['0xB385BBc8Bfc80451cDbB6acfFE4D95671f4C051c', '0xaD78CD1
 
 const autotaskRetrySchedule = {
     type: 'schedule',
-    frequencyMinutes: 10,
+    frequencyMinutes: 30,
 };
 
 const autotaskScheduleTrigger = {
@@ -95,7 +95,7 @@ exports.handler = async function (credentials, context) {
             }
         } else {
             shouldScheduleTomorrow = false;
-            await sendNotification(context, 'LZ Rate Updater: Gas too high', 'Autotask will retry in 10 minutes')
+            await sendNotification(context, 'LZ Rate Updater: Gas too high', 'Autotask will retry in 30 minutes. GasPrice: ' + gasPrice + '. Willing to pay: ' + maxGasPrice)
             console.log('Gas too high, current delay is ', delay / 3600, ' hours, willing to pay max ', ethers.utils.formatUnits(maxGasPrice, 'gwei'));
         }
     }
