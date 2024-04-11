@@ -95,7 +95,7 @@ exports.handler = async function (credentials, context) {
             }
         } else {
             shouldScheduleTomorrow = false;
-            await sendNotification(context, 'LZ Rate Updater: Gas too high', 'Autotask will retry in 30 minutes. GasPrice: ' + gasPrice + '. Willing to pay: ' + maxGasPrice)
+            // await sendNotification(context, 'LZ Rate Updater: Gas too high', 'Autotask will retry in 30 minutes. GasPrice: ' + gasPrice + '. Willing to pay: ' + maxGasPrice)
             console.log('Gas too high, current delay is ', delay / 3600, ' hours, willing to pay max ', ethers.utils.formatUnits(maxGasPrice, 'gwei'));
         }
     }
