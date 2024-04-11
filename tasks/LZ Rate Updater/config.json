@@ -5,7 +5,7 @@
   "paused": false,
   "trigger": {
     "type": "schedule",
-    "cron": "15 11 * * *"
+    "cron": "42 17 * * *"
   },
   "relayerId": "003ec47a-7c81-4572-af06-2943fead4af2",
   "codeDigest": "Zsv0wp0FLgzu+e+DsLyWB84ox08dJ1UTD/RKT0xkuuM=",
