@@ -20,7 +20,7 @@ const autotaskRetrySchedule = {
 
 const autotaskScheduleTrigger = {
     type: 'schedule',
-    cron: '26 10 * * *',
+    cron: '42 17 * * *',
 };
 
 // aux function to get the max amount of gas we are willing to pay given the delay in poking the relayer
