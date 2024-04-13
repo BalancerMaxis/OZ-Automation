@@ -18,9 +18,17 @@ const autotaskRetrySchedule = {
     frequencyMinutes: 30,
 };
 
-const autotaskScheduleTrigger = {
-    type: 'schedule',
-    cron: '42 17 * * *',
+const getCronScheduleForTimestamp = (timestamp) => {
+    const date = new Date(timestamp * 1000);
+    const minutes = date.getUTCMinutes();
+    const hours = date.getUTCHours();
+
+    const cron = `${minutes} ${hours} * * *`;
+
+    return {
+        type: 'schedule',
+        cron: cron,
+    };
 };
 
 // aux function to get the max amount of gas we are willing to pay given the delay in poking the relayer
@@ -99,7 +107,14 @@ exports.handler = async function (credentials, context) {
             console.log('Gas too high, current delay is ', delay / 3600, ' hours, willing to pay max ', ethers.utils.formatUnits(maxGasPrice, 'gwei'));
         }
     }
-    autotaskMetadata.trigger = shouldScheduleTomorrow ? autotaskScheduleTrigger : autotaskRetrySchedule;
+
+    if (shouldScheduleTomorrow) {
+        const nowInSeconds = Math.floor(Date.now() / 1000);
+        const tomorrowSchedule = nowInSeconds + 87000;
+        autotaskMetadata.trigger = getCronScheduleForTimestamp(tomorrowSchedule);
+    } else {
+        autotaskMetadata.trigger = autotaskRetrySchedule;
+    }
     await autotaskClient.update(autotaskMetadata);
 }
 
@@ -120,8 +135,12 @@ async function sendNotification(context, _subject, _message) {
 if (require.main === module) {
     require('dotenv').config();
     const {DEFENDER_API_KEY: DEFENDER_API_KEY, DEFENDER_API_SECRET: DEFENDER_API_SECRET} = process.env;
-    const credentials = {autotaskId: "06306db9-3616-4c71-a223-952a1b6bb5a5", apiKey:DEFENDER_API_KEY, apiSecret: DEFENDER_API_SECRET};
-    credentials.secrets = {DEFENDER_API_KEY,DEFENDER_API_SECRET}
+    const credentials = {
+        autotaskId: "06306db9-3616-4c71-a223-952a1b6bb5a5",
+        apiKey: DEFENDER_API_KEY,
+        apiSecret: DEFENDER_API_SECRET
+    };
+    credentials.secrets = {DEFENDER_API_KEY, DEFENDER_API_SECRET}
     exports.handler(credentials)
         .then(() => process.exit(0))
         .catch(error => {
