@@ -7,7 +7,7 @@
     "type": "schedule",
     "frequencyMinutes": 5
   },
-  "relayerId": "ce87abbe-295f-4d0d-b7fc-99f70124f09f",
+  "relayerId": "2a1aaf2f-30d1-463b-8063-a2f4a67d6bab",
   "codeDigest": "+D7kuUFW9/HpQX7ogDvebnP9cHGZEotzpEmYhUx4vVU=",
   "runtime": "nodejs16.x",
   "dependenciesVersion": "v2024-01-18"

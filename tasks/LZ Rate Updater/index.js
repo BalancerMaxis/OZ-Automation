@@ -69,8 +69,6 @@ exports.handler = async function (credentials, context) {
         console.log("Delay: ", delay.toString());
 
         if (delay < 0) {
-            autotaskMetadata.trigger = autotaskRetrySchedule;
-            await autotaskClient.update(autotaskMetadata);
             continue;
         }
 
