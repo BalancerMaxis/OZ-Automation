@@ -22,8 +22,10 @@ const getCronScheduleForTimestamp = (timestamp) => {
     const date = new Date(timestamp * 1000);
     const minutes = date.getUTCMinutes();
     const hours = date.getUTCHours();
+    const dayOfMonth = date.getUTCDate();
+    const month = date.getUTCMonth() + 1;
 
-    const cron = `${minutes} ${hours} * * *`;
+    const cron = `${minutes} ${hours} ${dayOfMonth} ${month} *`;
 
     return {
         type: 'schedule',
