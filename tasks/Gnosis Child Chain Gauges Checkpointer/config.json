@@ -4,11 +4,11 @@
   "name": "Gnosis Child Chain Gauges Checkpointer",
   "paused": false,
   "trigger": {
-    "type": "schedule",
-    "cron": "*/5 * * * 4"
+    "cron": "*/5 * * * 4",
+    "type": "schedule"
   },
   "relayerId": "df853bf7-3ccc-4461-9b20-cd4a1caf475a",
-  "codeDigest": "tpyjX1YYaaY1roOsQ08ivDWhjqO5y3ySO2ApCZFXMbQ=",
+  "codeDigest": "ydYVMpjDen5gfzBCJ1eulQVTn2KqhJHv0e8BTiIBw00=",
   "runtime": "nodejs16.x",
   "dependenciesVersion": "v2024-01-18"
 }

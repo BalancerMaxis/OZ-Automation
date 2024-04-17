@@ -4,11 +4,11 @@
   "name": "bb-a-WETH Rebalancer",
   "paused": true,
   "trigger": {
-    "type": "schedule",
-    "cron": "*/5 * * * *"
+    "cron": "*/5 * * * *",
+    "type": "schedule"
   },
   "relayerId": "003ec47a-7c81-4572-af06-2943fead4af2",
-  "codeDigest": "8xGaGZ38HTYAWrBGhNOCt7Ak27l1TJfN61J05Cc1TTA=",
+  "codeDigest": "ktYgGlJ6cZqtYFM7V2kyAbJ1Q+4LQ0vXqq3kqTeyfgE=",
   "runtime": "nodejs16.x",
   "dependenciesVersion": "v2024-01-18"
 }

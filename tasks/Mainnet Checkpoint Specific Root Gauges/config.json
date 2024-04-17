@@ -4,11 +4,11 @@
   "name": "Mainnet Checkpoint Specific Root Gauges",
   "paused": true,
   "trigger": {
-    "type": "schedule",
-    "cron": "10 0 * * 4"
+    "cron": "10 0 * * 4",
+    "type": "schedule"
   },
   "relayerId": "003ec47a-7c81-4572-af06-2943fead4af2",
-  "codeDigest": "1EEYeQmC9OO06o5YzWMRxWQ1AD+vpZFX3tV1FsOLaLc=",
+  "codeDigest": "Va6Oe+LECBaq7yO3VXGKrsU1REyCwVCj1y914GK5eCw=",
   "runtime": "nodejs16.x",
   "dependenciesVersion": "v2024-01-18"
 }

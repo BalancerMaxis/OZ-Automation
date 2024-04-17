@@ -4,11 +4,11 @@
   "name": "Arbitrum Gauge Reward Checkpointer",
   "paused": true,
   "trigger": {
-    "type": "schedule",
-    "cron": "00 17 * * 5"
+    "cron": "00 17 * * 5",
+    "type": "schedule"
   },
   "relayerId": "0b7807ed-ce8d-476b-8598-040c296adfba",
-  "codeDigest": "lVfRrMQ7nrzXd6Z9RMmkWtldmj7+lwqHyFUnD1ucxEE=",
+  "codeDigest": "Q0FIjnCroBsprvyDJGoBRTxfZt1X9jwDY073R/1UMNo=",
   "runtime": "nodejs16.x",
   "dependenciesVersion": "v2024-01-18"
 }

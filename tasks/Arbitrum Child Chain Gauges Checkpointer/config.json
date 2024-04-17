@@ -4,11 +4,11 @@
   "name": "Arbitrum Child Chain Gauges Checkpointer",
   "paused": false,
   "trigger": {
-    "type": "schedule",
-    "cron": "*/5 * * * 4"
+    "cron": "*/5 * * * 4",
+    "type": "schedule"
   },
   "relayerId": "0b7807ed-ce8d-476b-8598-040c296adfba",
-  "codeDigest": "T1HIchis58/4vVdVt14UKk53r5cWJ9ik8vAfxyKVFjE=",
+  "codeDigest": "HBr8AywfQaZmpI1KjA0srvgAQ93bVyaCt29i6NWjj9Y=",
   "runtime": "nodejs16.x",
   "dependenciesVersion": "v2024-01-18"
 }

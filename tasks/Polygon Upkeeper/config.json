@@ -4,11 +4,11 @@
   "name": "Polygon Upkeeper",
   "paused": true,
   "trigger": {
-    "type": "schedule",
-    "frequencyMinutes": 5
+    "frequencyMinutes": 5,
+    "type": "schedule"
   },
   "relayerId": "8735c61b-7c5b-48ac-a088-cc727adcb016",
-  "codeDigest": "F+uXsax02Yomg2mNK8v0WOCLJSiw3lMMx5hUTRgL/XE=",
+  "codeDigest": "Kjma+FoTWNn20tRBqshRiE859D2qcM0AY0dSwTyHfyI=",
   "runtime": "nodejs16.x",
   "dependenciesVersion": "v2024-01-18"
 }

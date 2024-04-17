@@ -4,10 +4,10 @@
   "name": "Mainnet low gas warning",
   "paused": true,
   "trigger": {
-    "type": "schedule",
-    "cron": "0 * * * *"
+    "cron": "0 * * * *",
+    "type": "schedule"
   },
-  "codeDigest": "QzH9Cgiz7XzMBZGRmOQQLvrFJdbnTYeJqUI5xre7R0k=",
+  "codeDigest": "Twl/KHUXASMRcyWM9qVOGvQ6AD4TAXvGpx2WAABjG0s=",
   "runtime": "nodejs16.x",
   "dependenciesVersion": "v2024-01-18"
 }

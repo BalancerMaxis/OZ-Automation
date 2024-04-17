@@ -4,11 +4,11 @@
   "name": "Base Child Chain Gauges Checkpointer",
   "paused": false,
   "trigger": {
-    "type": "schedule",
-    "cron": "*/5 * * * 4"
+    "cron": "*/5 * * * 4",
+    "type": "schedule"
   },
   "relayerId": "384e11fa-9222-4556-9f93-add1fef65f83",
-  "codeDigest": "krMhOf13OKVOtK+V2UBvA7GWjIZzhDAtnL4mLuDWfn8=",
+  "codeDigest": "HMolaQATFLih/D7XwGLpJdfBubGljaiE+wNEll4maW4=",
   "runtime": "nodejs16.x",
   "dependenciesVersion": "v2024-01-18"
 }

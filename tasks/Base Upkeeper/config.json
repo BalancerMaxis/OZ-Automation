@@ -4,11 +4,11 @@
   "name": "Base Upkeeper",
   "paused": true,
   "trigger": {
-    "type": "schedule",
-    "frequencyMinutes": 5
+    "frequencyMinutes": 5,
+    "type": "schedule"
   },
   "relayerId": "384e11fa-9222-4556-9f93-add1fef65f83",
-  "codeDigest": "f7wMIthKjbdpxhZ4qzyThaXjk0+OIMc7UAs75M/o71o=",
+  "codeDigest": "ZHRuf+Hx4Vm+zroibZziMogi3Y1noY1JhK8YDC1bpNU=",
   "runtime": "nodejs16.x",
   "dependenciesVersion": "v2024-01-18"
 }

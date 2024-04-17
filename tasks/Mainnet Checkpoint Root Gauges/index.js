@@ -49,14 +49,8 @@ exports.handler = async function (credentials, context) {
     console.log('Checkpointing threshold: ', CHECKPOINTING_THRESHOLD, ' = ', ethers.utils.formatEther(CHECKPOINTING_THRESHOLD) * 100, '%');
 
     const checkpointingTypes = [
-        'Polygon',
-        'Base',
-        'Gnosis',
         'PolygonZkEvm',
-        'EthereumSingleRecipientGauge',
         'Avalanche',
-        'Arbitrum',
-        'Optimism'
     ]
     const store = new KeyValueStoreClient(credentials);
 

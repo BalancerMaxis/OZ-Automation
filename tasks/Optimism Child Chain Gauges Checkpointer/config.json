@@ -4,10 +4,10 @@
   "name": "Optimism Child Chain Gauges Checkpointer",
   "paused": true,
   "trigger": {
-    "type": "schedule",
-    "cron": "*/5 * * * 4"
+    "cron": "*/5 * * * 4",
+    "type": "schedule"
   },
-  "codeDigest": "jU0mSSXMXdYYDj3Po+8IJc8x5f24YTdFCECQxT/z3b4=",
+  "codeDigest": "HdBy/F4zBS0NGQPfN29BFDI0empqQggVPShgrsyVkao=",
   "runtime": "nodejs16.x",
   "dependenciesVersion": "v2024-01-18"
 }

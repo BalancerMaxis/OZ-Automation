@@ -4,11 +4,11 @@
   "name": "Avalanche Upkeeper",
   "paused": true,
   "trigger": {
-    "type": "schedule",
-    "frequencyMinutes": 5
+    "frequencyMinutes": 5,
+    "type": "schedule"
   },
   "relayerId": "73e57662-7a23-462e-96ce-40810292a07f",
-  "codeDigest": "vfZq5JKNEAXDySI+Snj8ePoSaClDwrEZ4TPS6FqqR18=",
+  "codeDigest": "3eaPZZbpazHfZPTyrZsHN0fG9eM056gSjnJlqFMgrH0=",
   "runtime": "nodejs16.x",
   "dependenciesVersion": "v2024-01-18"
 }

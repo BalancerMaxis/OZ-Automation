@@ -4,11 +4,11 @@
   "name": "Polygon Child Chain Gauges Checkpointer",
   "paused": false,
   "trigger": {
-    "type": "schedule",
-    "cron": "*/5 * * * 4"
+    "cron": "*/5 * * * 4",
+    "type": "schedule"
   },
   "relayerId": "8735c61b-7c5b-48ac-a088-cc727adcb016",
-  "codeDigest": "TIDMVnTETYG5LQpsmG+2MX5tLMDC9t9mvWRoYn3XS8s=",
+  "codeDigest": "GeQsevBiCvsOKb1sJCBeQwWPi0YKf6OTHmVeT6pX/mM=",
   "runtime": "nodejs16.x",
   "dependenciesVersion": "v2024-01-18"
 }
