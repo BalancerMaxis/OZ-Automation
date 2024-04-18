@@ -41,7 +41,10 @@ async function sendNotification(context, _subject, _message) {
 
 // Entrypoint for the Autotask
 exports.handler = async function (credentials, context) {
-    const autotaskClient = new AutotaskClient({ apiKey: credentials.secrets.apiKey, apiSecret: credentials.secrets.apiSecret });
+    const autotaskClient = new AutotaskClient({
+        apiKey: credentials.secrets.DEFENDER_API_KEY,
+        apiSecret: credentials.secrets.DEFENDER_API_SECRET
+    });
     let autotaskMetadata = await autotaskClient.get(credentials.autotaskId);
     const provider = new DefenderRelayProvider(credentials);
     const signer = new DefenderRelaySigner(credentials, provider, { speed: 'average' });

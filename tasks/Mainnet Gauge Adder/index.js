@@ -2,7 +2,7 @@ const {
     DefenderRelaySigner,
     DefenderRelayProvider,
 } = require('defender-relay-client/lib/ethers')
-const { Relayer } = require('defender-relay-client');
+const {Relayer} = require('defender-relay-client');
 const ethers = require('ethers')
 
 const GAUGE_CHECKPOINTER_ADDRESS = '0x0C8f71D19f87c0bD1b9baD2484EcC3388D5DbB98'
@@ -16,18 +16,28 @@ const SUBGRAPH_QUERY = `{
       id
       chain
     }
+     singleRecipientGauges(first: 100, where:{
+      isKilled:false
+      gauge_not:null
+    }) {
+    id
+  }
   }`
 
 // aux function to get all gauges from subgraph
 async function getGauges() {
     const response = await fetch(SUBGRAPH_URL, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ query: SUBGRAPH_QUERY }),
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({query: SUBGRAPH_QUERY}),
     })
     const json = await response.json()
-    let result = json.data.rootGauges
-    return result
+    let rootGauges = json.data.rootGauges;
+    let singleRecipientGauges = json.data.singleRecipientGauges;
+    singleRecipientGauges.forEach(obj => obj.chain = "Ethereum");
+
+
+    return [...rootGauges, ...singleRecipientGauges]
 }
 
 
@@ -37,9 +47,9 @@ exports.handler = async function (event) {
     // Use relayer for sending txs
     console.log('Getting gauges from the subgraph...');
     const gauges = await getGauges();
-    console.log(gauges);
+
     const provider = new DefenderRelayProvider(event);
-    const signer = new DefenderRelaySigner(event, provider, { speed: 'fast' });
+    const signer = new DefenderRelaySigner(event, provider, {speed: 'fast'});
     const checkpointerContract = new ethers.Contract(GAUGE_CHECKPOINTER_ADDRESS, GAUGE_CHECKPOINTER_ABI, signer);
     // get the unique chains
     const chains = [...new Set(gauges.map(gauge => gauge.chain))];
@@ -69,4 +79,16 @@ exports.handler = async function (event) {
             console.log('No gauges to add for chain ', chain);
         }
     }
+}
+
+// To run locally (this code will not be executed in Autotasks)
+if (require.main === module) {
+    require('dotenv').config();
+    const {DEFENDER_API_KEY: apiKey, DEFENDER_API_SECRET: apiSecret} = process.env;
+    exports.handler({apiKey, apiSecret})
+        .then(() => process.exit(0))
+        .catch(error => {
+            console.error(error);
+            process.exit(1);
+        });
 }
