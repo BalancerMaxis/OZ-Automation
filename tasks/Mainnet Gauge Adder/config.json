@@ -2,7 +2,7 @@
   "autotaskId": "2fc48186-1058-424f-9d79-5abdfe28edcb",
   "actionId": "2fc48186-1058-424f-9d79-5abdfe28edcb",
   "name": "Mainnet Gauge Adder",
-  "paused": true,
+  "paused": false,
   "trigger": {
     "cron": "0 0 * * 2",
     "type": "schedule"
