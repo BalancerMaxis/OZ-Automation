@@ -96,7 +96,6 @@ exports.handler = async function (credentials, context) {
 
             if (context) {
                 await sendNotification(context, 'Rate updated for: ' + rateProvider, 'Transaction hash: ' + tx.hash)
-                console.log('Autotask will run again next Tomorrow at 10:25 UTC');
             } else {
                 console.log('No context, not sending notification');
                 console.log('Rate updated: ' + tx.hash);
@@ -110,10 +109,12 @@ exports.handler = async function (credentials, context) {
 
     if (shouldScheduleTomorrow) {
         const nowInSeconds = Math.floor(Date.now() / 1000);
-        const tomorrowSchedule = nowInSeconds + 87000;
-        autotaskMetadata.trigger = getCronScheduleForTimestamp(tomorrowSchedule);
+        const tomorrowSchedule = getCronScheduleForTimestamp(nowInSeconds + 87000);
+        console.log('Autotask will run again next: ' + tomorrowSchedule.cron);
+        autotaskMetadata.trigger = tomorrowSchedule;
     } else {
         autotaskMetadata.trigger = autotaskRetrySchedule;
+        console.log('Autotask will run again in 30 minutes');
     }
     await autotaskClient.update(autotaskMetadata);
 }
