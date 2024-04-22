@@ -34,7 +34,7 @@ async function getGauges() {
     const json = await response.json()
     let rootGauges = json.data.rootGauges;
     let singleRecipientGauges = json.data.singleRecipientGauges;
-    singleRecipientGauges.forEach(obj => obj.chain = "Ethereum");
+    singleRecipientGauges.forEach(obj => obj.chain = "EthereumSingleRecipientGauge");
 
 
     return [...rootGauges, ...singleRecipientGauges]
