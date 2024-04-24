@@ -1,0 +1,11 @@
+{
+  "name": "VeBalFeeInjector Upkeeper",
+  "paused": false,
+  "trigger": {
+    "cron": "10 00 * * *",
+    "type": "schedule"
+  },
+  "relayerId": "003ec47a-7c81-4572-af06-2943fead4af2",
+  "runtime": "nodejs16.x",
+  "dependenciesVersion": "v2024-01-18"
+}
