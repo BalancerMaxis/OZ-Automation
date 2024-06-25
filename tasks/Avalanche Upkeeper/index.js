@@ -48,7 +48,7 @@ exports.handler = async function (credentials, context) {
                     notificationClient.send({
                         channelAlias: 'Hal Maxi Bot (tg)',
                         subject: 'Upkeep performed',
-                        message: 'Avalanche Upkeep. Transaction hash: ' + tx.hash
+                        message: 'Avalanche Upkeep. Transaction hash: ' + tx.hash + '. Explorer: https://snowtrace.io/tx/' + tx.hash
                     });
                 } catch (error) {
                     console.error('Failed to send notification', error);

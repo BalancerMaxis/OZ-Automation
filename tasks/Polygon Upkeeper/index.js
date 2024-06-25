@@ -48,7 +48,7 @@ exports.handler = async function (credentials, context) {
                     notificationClient.send({
                         channelAlias: 'Hal Maxi Bot (tg)',
                         subject: 'Upkeep performed',
-                        message: 'Polygon Upkeep. Transaction hash: ' + tx.hash
+                        message: 'Polygon Upkeep. Transaction hash: ' + tx.hash + '. Explorer: https://polygonscan.com/tx/' + tx.hash
                     });
                 } catch (error) {
                     console.error('Failed to send notification', error);
