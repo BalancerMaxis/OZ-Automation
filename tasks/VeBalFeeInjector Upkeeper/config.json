@@ -4,11 +4,11 @@
   "name": "VeBalFeeInjector Upkeeper",
   "paused": false,
   "trigger": {
-    "type": "schedule",
-    "cron": "10 00 * * *"
+    "cron": "10 00 * * *",
+    "type": "schedule"
   },
   "relayerId": "003ec47a-7c81-4572-af06-2943fead4af2",
-  "codeDigest": "Je79FMrp1WETu/7bqmKkylthHva7AEo2cF2mCXEeXmA=",
-  "runtime": "nodejs16.x",
-  "dependenciesVersion": "v2024-01-18"
+  "codeDigest": "pi+g9pwc3rCCJtK9jj6H+Z3LTTO9NXnxgPHmV1uyGIM=",
+  "runtime": "nodejs20.x",
+  "dependenciesVersion": "v2024-06-13"
 }

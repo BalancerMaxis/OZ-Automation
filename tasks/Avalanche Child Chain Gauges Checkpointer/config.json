@@ -4,11 +4,11 @@
   "name": "Avalanche Child Chain Gauges Checkpointer",
   "paused": false,
   "trigger": {
-    "type": "schedule",
-    "cron": "*/5 * * * 4"
+    "cron": "*/5 * * * 4",
+    "type": "schedule"
   },
   "relayerId": "73e57662-7a23-462e-96ce-40810292a07f",
-  "codeDigest": "LnJczJN4/xF7m2/um/8P4sGcIbhxFEfu0kaSH+vC9Y0=",
-  "runtime": "nodejs16.x",
-  "dependenciesVersion": "v2024-01-18"
+  "codeDigest": "gCgG+oDj8hBJfETBJ0LaoS0eeLGHRyF0err2aCZQTNQ=",
+  "runtime": "nodejs20.x",
+  "dependenciesVersion": "v2024-06-13"
 }

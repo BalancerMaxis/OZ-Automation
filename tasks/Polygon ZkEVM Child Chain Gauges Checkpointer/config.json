@@ -4,11 +4,11 @@
   "name": "Polygon ZkEVM Child Chain Gauges Checkpointer",
   "paused": false,
   "trigger": {
-    "type": "schedule",
-    "cron": "*/5 * * * 4"
+    "cron": "*/5 * * * 4",
+    "type": "schedule"
   },
   "relayerId": "2a1aaf2f-30d1-463b-8063-a2f4a67d6bab",
-  "codeDigest": "bdZ7UXA5HKWFAAAJ4rmVqD1cJ8p+DsqnhaVGLAy4ZIc=",
-  "runtime": "nodejs16.x",
-  "dependenciesVersion": "v2024-01-18"
+  "codeDigest": "RHrtoVAnpQZ3+gQ5vSgn80cTi5BwlC/RwdLtOJeALb8=",
+  "runtime": "nodejs20.x",
+  "dependenciesVersion": "v2024-06-13"
 }

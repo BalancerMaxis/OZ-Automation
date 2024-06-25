@@ -7,7 +7,7 @@
     "cron": "*/5 * * * 4",
     "type": "schedule"
   },
-  "codeDigest": "EybxbmFG8AKTIWrCRFwOxvGjm1jnvVDK2St9iEPhZ80=",
-  "runtime": "nodejs16.x",
-  "dependenciesVersion": "v2024-01-18"
+  "codeDigest": "WRII4D0K8+FGAjDTzXS6fa1ejDrqWhRGjKHjz3t9KKM=",
+  "runtime": "nodejs20.x",
+  "dependenciesVersion": "v2024-06-13"
 }

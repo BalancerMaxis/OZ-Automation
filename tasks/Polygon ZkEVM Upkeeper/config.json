@@ -2,13 +2,13 @@
   "autotaskId": "3c54289e-5e3c-4ef5-9016-25a9bb511500",
   "actionId": "3c54289e-5e3c-4ef5-9016-25a9bb511500",
   "name": "Polygon ZkEVM Upkeeper",
-  "paused": true,
+  "paused": false,
   "trigger": {
     "frequencyMinutes": 5,
     "type": "schedule"
   },
   "relayerId": "2a1aaf2f-30d1-463b-8063-a2f4a67d6bab",
-  "codeDigest": "r8+OO5laVrLm6N4qtURAMCmTE1MLm0U7cnR1YPOvzo0=",
-  "runtime": "nodejs16.x",
-  "dependenciesVersion": "v2024-01-18"
+  "codeDigest": "/16Q0ZTM66+2a3LRX9RsBVhQsTZ+b4sbcIoh1Ub00ZY=",
+  "runtime": "nodejs20.x",
+  "dependenciesVersion": "v2024-06-13"
 }
