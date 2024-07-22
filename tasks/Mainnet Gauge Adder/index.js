@@ -81,7 +81,7 @@ exports.handler = async function (event, context) {
             const { notificationClient } = context;
             try {
                 notificationClient.send({
-                    channelAlias: 'Hal Maxi Bot (tg)',
+                    channelAlias: 'maxi_alerts_critical',
                     subject: 'MAINNET GAUGE ADDER FAILED',
                     message: 'There was a problem running the Mainnet Gauge Adder on Open Zeppelin. ' + error
                 });
