@@ -59,7 +59,8 @@ exports.handler = async function (credentials, context) {
         'Avalanche',
         'EthereumSingleRecipientGauge',
         'Arbitrum',
-        'Optimism'
+        'Optimism',
+        'Fraxtal',
     ]
     const store = new KeyValueStoreClient(credentials);
 
