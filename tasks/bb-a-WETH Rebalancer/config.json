@@ -8,7 +8,7 @@
     "type": "schedule"
   },
   "relayerId": "003ec47a-7c81-4572-af06-2943fead4af2",
-  "codeDigest": "Bklsh2Fe5qxEsxrFgWt5/l1xtn4+WUFD1oFGnWd9Iuc=",
+  "codeDigest": "6z2s1ZCqR1Tr07i4ihulXSKlXuyrVWKX+3GxR0TxTpg=",
   "runtime": "nodejs20.x",
   "dependenciesVersion": "v2024-06-13"
 }

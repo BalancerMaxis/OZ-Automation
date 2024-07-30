@@ -4,11 +4,11 @@
   "name": "LZ Rate Updater",
   "paused": false,
   "trigger": {
-    "cron": "4 12 23 7 *",
+    "cron": "4 12 31 7 *",
     "type": "schedule"
   },
   "relayerId": "003ec47a-7c81-4572-af06-2943fead4af2",
-  "codeDigest": "tdY6zc+mKflniHNkZtBw+YxKCtUdAazSa4zYczqeVFg=",
+  "codeDigest": "q+0RhVdA8OXsMk2olmXSPVVv29gP81eZYGuZdIOUs+Y=",
   "runtime": "nodejs20.x",
   "dependenciesVersion": "v2024-06-13"
 }
