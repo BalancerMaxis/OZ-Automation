@@ -2,7 +2,7 @@
   "autotaskId": "5f58ebcc-cf29-49df-b977-613ac3bacc56",
   "actionId": "5f58ebcc-cf29-49df-b977-613ac3bacc56",
   "name": "VeBalFeeInjector Upkeeper",
-  "paused": false,
+  "paused": true,
   "trigger": {
     "cron": "10 00 * * *",
     "type": "schedule"
