@@ -2,7 +2,7 @@
   "autotaskId": "3c54289e-5e3c-4ef5-9016-25a9bb511500",
   "actionId": "3c54289e-5e3c-4ef5-9016-25a9bb511500",
   "name": "Polygon ZkEVM Upkeeper",
-  "paused": false,
+  "paused": true,
   "trigger": {
     "frequencyMinutes": 5,
     "type": "schedule"
