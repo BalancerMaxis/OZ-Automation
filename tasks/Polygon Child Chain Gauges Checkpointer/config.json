@@ -4,11 +4,12 @@
   "name": "Polygon Child Chain Gauges Checkpointer",
   "paused": false,
   "trigger": {
-    "cron": "*/5 * * * 4",
-    "type": "schedule"
+    "type": "schedule",
+    "cron": "*/5 * * * 4"
   },
   "relayerId": "8735c61b-7c5b-48ac-a088-cc727adcb016",
-  "codeDigest": "d8Z/nfVXj9l42YiL0W6DUmtpGG4jg3GlULHcehwhfw0=",
+  "codeDigest": "TgmgJHyjARBZX4ruoSqhDAe7FxwdjBujYHCzIqyeoDQ=",
+  "stackResourceId": "mystack.polygon-child-chain-gauges-checkpointer",
   "runtime": "nodejs20.x",
   "dependenciesVersion": "v2024-06-13"
 }

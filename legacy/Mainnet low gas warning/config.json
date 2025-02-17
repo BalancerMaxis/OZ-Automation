@@ -4,10 +4,11 @@
   "name": "Mainnet low gas warning",
   "paused": true,
   "trigger": {
-    "cron": "0 * * * *",
-    "type": "schedule"
+    "type": "schedule",
+    "cron": "0 * * * *"
   },
-  "codeDigest": "X2HnzUjxNFbNc1e4T4YZ4prJf15BIq3dpsHQevF0p+U=",
+  "codeDigest": "Sog+chEB2DAajde8hr8Nc+M33fwxT9c+tmATnngXoYs=",
+  "stackResourceId": "mystack.mainnet-low-gas-warning",
   "runtime": "nodejs20.x",
   "dependenciesVersion": "v2024-06-13"
 }

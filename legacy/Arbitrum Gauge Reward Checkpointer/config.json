@@ -4,11 +4,12 @@
   "name": "Arbitrum Gauge Reward Checkpointer",
   "paused": true,
   "trigger": {
-    "cron": "00 17 * * 5",
-    "type": "schedule"
+    "type": "schedule",
+    "cron": "00 17 * * 5"
   },
   "relayerId": "0b7807ed-ce8d-476b-8598-040c296adfba",
-  "codeDigest": "9LHdAW0KwQd8IKMeINkDViDqGSDsnFPaHiGpMn6TQM8=",
+  "codeDigest": "ZoKZIKNr79dMlSo0MKO3NLmoT9jkuhoTlpMX7o8QCuA=",
+  "stackResourceId": "mystack.arbitrum-gauge-reward-checkpointer",
   "runtime": "nodejs20.x",
   "dependenciesVersion": "v2024-06-13"
 }

@@ -4,11 +4,12 @@
   "name": "Fraxtal Child Chain Gauges Checkpointer",
   "paused": false,
   "trigger": {
-    "cron": "*/5 * * * 4",
-    "type": "schedule"
+    "type": "schedule",
+    "cron": "*/5 * * * 4"
   },
   "relayerId": "938fbdd0-8843-4015-8ce4-c8f6596d0661",
-  "codeDigest": "ZQWQ4OJre4jUNx+56ZTG+8Wu8G7U+jNtwAVHziPBUQM=",
+  "codeDigest": "8lhzgAGpTxjP8HDTEz8Z6W1TVuCXR96zW9NxF+A6ZMw=",
+  "stackResourceId": "mystack.fraxtal-child-chain-gauges-checkpointer",
   "runtime": "nodejs20.x",
   "dependenciesVersion": "v2024-06-13"
 }

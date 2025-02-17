@@ -4,10 +4,11 @@
   "name": "Optimism Child Chain Gauges Checkpointer",
   "paused": true,
   "trigger": {
-    "cron": "*/5 * * * 4",
-    "type": "schedule"
+    "type": "schedule",
+    "cron": "*/5 * * * 4"
   },
-  "codeDigest": "6Xc7dc59cSSzqlBcwtaDsujQyazOYCLrfyFoQMZNW7A=",
+  "codeDigest": "muauEfgqBQJbBiSAb6QcoQVe19VPpnHXmegV0Wy1Xj0=",
+  "stackResourceId": "mystack.optimism-child-chain-gauges-checkpointer",
   "runtime": "nodejs20.x",
   "dependenciesVersion": "v2024-06-13"
 }

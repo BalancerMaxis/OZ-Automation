@@ -4,11 +4,12 @@
   "name": "Polygon Upkeeper",
   "paused": true,
   "trigger": {
-    "frequencyMinutes": 5,
-    "type": "schedule"
+    "type": "schedule",
+    "frequencyMinutes": 5
   },
   "relayerId": "8735c61b-7c5b-48ac-a088-cc727adcb016",
-  "codeDigest": "okjfPF8XRVDiw42YMjNb29eMldYMDNfdcVWA3XTLaQU=",
+  "codeDigest": "fZjt2K4eKXzS1tm312beOr0VW5SB/SHsqs8ITjli9jY=",
+  "stackResourceId": "mystack.polygon-upkeeper",
   "runtime": "nodejs20.x",
   "dependenciesVersion": "v2024-06-13"
 }

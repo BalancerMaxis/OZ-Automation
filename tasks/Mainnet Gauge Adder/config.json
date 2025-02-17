@@ -4,11 +4,12 @@
   "name": "Mainnet Gauge Adder",
   "paused": false,
   "trigger": {
-    "cron": "0 0 * * 2",
-    "type": "schedule"
+    "type": "schedule",
+    "cron": "0 0 * * 2"
   },
   "relayerId": "003ec47a-7c81-4572-af06-2943fead4af2",
-  "codeDigest": "AvUVSZhMDUeFreErBcMSZjL1BCSb5/Pb5+4ag3mb4yA=",
+  "codeDigest": "A9jb0sIf7JUinh1D6VvPrhXcHv9VqDT7AccJGHWb1fc=",
+  "stackResourceId": "mystack.mainnet-gauge-adder",
   "runtime": "nodejs20.x",
   "dependenciesVersion": "v2024-06-13"
 }

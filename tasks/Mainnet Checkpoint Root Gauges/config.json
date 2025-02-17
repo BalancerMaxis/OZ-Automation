@@ -4,11 +4,12 @@
   "name": "Mainnet Checkpoint Root Gauges",
   "paused": false,
   "trigger": {
-    "cron": "5 0 * * 4",
-    "type": "schedule"
+    "type": "schedule",
+    "cron": "5 0 * * 4"
   },
   "relayerId": "003ec47a-7c81-4572-af06-2943fead4af2",
-  "codeDigest": "+d5Bn3YRISu06kcX876dJoeMnkRggJ7S+RDXaqzDBXs=",
+  "codeDigest": "UwGgcPqpjzLrtMOaHzkLgbJ+ckmUo7IIsFJiKepTsD4=",
+  "stackResourceId": "mystack.mainnet-checkpoint-root-gauges",
   "runtime": "nodejs20.x",
   "dependenciesVersion": "v2024-06-13"
 }

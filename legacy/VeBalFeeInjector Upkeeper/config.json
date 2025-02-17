@@ -4,11 +4,12 @@
   "name": "VeBalFeeInjector Upkeeper",
   "paused": true,
   "trigger": {
-    "cron": "10 00 * * *",
-    "type": "schedule"
+    "type": "schedule",
+    "cron": "10 00 * * *"
   },
   "relayerId": "003ec47a-7c81-4572-af06-2943fead4af2",
-  "codeDigest": "+bvXUtJatPqnVaBE7ZXGJqRys3HI4FG0yzoDkpmsuGI=",
+  "codeDigest": "3YFbkkaU+Jy7ALYYFWyBtrnV+aq9saD2bjOianHv1t0=",
+  "stackResourceId": "mystack.ve-bal-fee-injector-upkeeper",
   "runtime": "nodejs20.x",
   "dependenciesVersion": "v2024-06-13"
 }

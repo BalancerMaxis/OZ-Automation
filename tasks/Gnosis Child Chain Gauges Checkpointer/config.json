@@ -4,11 +4,12 @@
   "name": "Gnosis Child Chain Gauges Checkpointer",
   "paused": false,
   "trigger": {
-    "cron": "*/5 * * * 4",
-    "type": "schedule"
+    "type": "schedule",
+    "cron": "*/5 * * * 4"
   },
   "relayerId": "df853bf7-3ccc-4461-9b20-cd4a1caf475a",
-  "codeDigest": "z/FFjG11hIt0UcZuyufXV8ST88Dt1P9P4XmvYYSqb94=",
+  "codeDigest": "NyBBT4lA/36PMuvbyKYJSpPjyVP3fQJ0W9QIv6HIRSM=",
+  "stackResourceId": "mystack.gnosis-child-chain-gauges-checkpointer",
   "runtime": "nodejs20.x",
   "dependenciesVersion": "v2024-06-13"
 }

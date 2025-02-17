@@ -4,11 +4,12 @@
   "name": "bb-a-WETH Rebalancer",
   "paused": true,
   "trigger": {
-    "cron": "*/5 * * * *",
-    "type": "schedule"
+    "type": "schedule",
+    "cron": "*/5 * * * *"
   },
   "relayerId": "003ec47a-7c81-4572-af06-2943fead4af2",
-  "codeDigest": "jXzC3aF4rTr9Ta0BLeahg95BwlUsknJmciap4yoh5tA=",
+  "codeDigest": "7GykcBX4UtdBH3xby2/rt/TA7+JCYkMsCEFfhccJ18s=",
+  "stackResourceId": "mystack.bb-a-weth-rebalancer",
   "runtime": "nodejs20.x",
   "dependenciesVersion": "v2024-06-13"
 }

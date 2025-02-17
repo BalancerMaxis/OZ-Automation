@@ -4,11 +4,12 @@
   "name": "Arbitrum Upkeeper",
   "paused": true,
   "trigger": {
-    "frequencyMinutes": 5,
-    "type": "schedule"
+    "type": "schedule",
+    "frequencyMinutes": 5
   },
   "relayerId": "0b7807ed-ce8d-476b-8598-040c296adfba",
-  "codeDigest": "SjaFMwlDQvvQk/J1nvhPFVIR6SS/OVSvokBpdeNLfCs=",
+  "codeDigest": "coqrS9XdgOA0GLfTYKWR4kLiDkEq6t21X4zcBH+3nhQ=",
+  "stackResourceId": "mystack.arbitrum-upkeeper",
   "runtime": "nodejs20.x",
   "dependenciesVersion": "v2024-06-13"
 }

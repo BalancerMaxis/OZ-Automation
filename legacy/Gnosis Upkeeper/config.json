@@ -4,11 +4,12 @@
   "name": "Gnosis Upkeeper",
   "paused": true,
   "trigger": {
-    "frequencyMinutes": 5,
-    "type": "schedule"
+    "type": "schedule",
+    "frequencyMinutes": 5
   },
   "relayerId": "df853bf7-3ccc-4461-9b20-cd4a1caf475a",
-  "codeDigest": "BxlhOG8lh7abzySFScmiYjvi51I+KEGfZ8p2+7/RB/Y=",
+  "codeDigest": "SCXncsM7yDEYLqCUfaQ/NPEsFH8y7mQFMFEisjiawqg=",
+  "stackResourceId": "mystack.gnosis-upkeeper",
   "runtime": "nodejs20.x",
   "dependenciesVersion": "v2024-06-13"
 }
