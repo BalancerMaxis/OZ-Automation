@@ -2,7 +2,7 @@
   "autotaskId": "60e270d0-1515-4404-b820-1cabc995aca9",
   "actionId": "60e270d0-1515-4404-b820-1cabc995aca9",
   "name": "Fraxtal Child Chain Gauges Checkpointer",
-  "paused": false,
+  "paused": true,
   "trigger": {
     "type": "schedule",
     "cron": "*/5 * * * 4"
