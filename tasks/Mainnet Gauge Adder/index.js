@@ -6,7 +6,7 @@ const ethers = require('ethers')
 
 const GAUGE_CHECKPOINTER_ADDRESS = '0x0C8f71D19f87c0bD1b9baD2484EcC3388D5DbB98'
 const GAUGE_CHECKPOINTER_ABI = `[{"inputs":[{"internalType":"contract IGaugeAdder","name":"gaugeAdder","type":"address"},{"internalType":"contract IAuthorizerAdaptorEntrypoint","name":"authorizerAdaptorEntrypoint","type":"address"}],"stateMutability":"nonpayable","type":"constructor"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"contract IStakelessGauge","name":"gauge","type":"address"},{"indexed":true,"internalType":"string","name":"indexedGaugeType","type":"string"},{"indexed":false,"internalType":"string","name":"gaugeType","type":"string"}],"name":"GaugeAdded","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"contract IStakelessGauge","name":"gauge","type":"address"},{"indexed":true,"internalType":"string","name":"indexedGaugeType","type":"string"},{"indexed":false,"internalType":"string","name":"gaugeType","type":"string"}],"name":"GaugeRemoved","type":"event"},{"inputs":[{"internalType":"string","name":"gaugeType","type":"string"},{"internalType":"contract IStakelessGauge[]","name":"gauges","type":"address[]"}],"name":"addGauges","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"string","name":"gaugeType","type":"string"},{"internalType":"contract IStakelessGauge[]","name":"gauges","type":"address[]"}],"name":"addGaugesWithVerifiedType","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"minRelativeWeight","type":"uint256"}],"name":"checkpointGaugesAboveRelativeWeight","outputs":[],"stateMutability":"payable","type":"function"},{"inputs":[{"internalType":"string","name":"gaugeType","type":"string"},{"internalType":"uint256","name":"minRelativeWeight","type":"uint256"}],"name":"checkpointGaugesOfTypeAboveRelativeWeight","outputs":[],"stateMutability":"payable","type":"function"},{"inputs":[{"internalType":"string","name":"gaugeType","type":"string"},{"internalType":"address","name":"gauge","type":"address"}],"name":"checkpointSingleGauge","outputs":[],"stateMutability":"payable","type":"function"},{"inputs":[{"internalType":"bytes4","name":"selector","type":"bytes4"}],"name":"getActionId","outputs":[{"internalType":"bytes32","name":"","type":"bytes32"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"getAuthorizer","outputs":[{"internalType":"contract IAuthorizer","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"getGaugeAdder","outputs":[{"internalType":"contract IGaugeAdder","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"string","name":"gaugeType","type":"string"},{"internalType":"uint256","name":"index","type":"uint256"}],"name":"getGaugeAtIndex","outputs":[{"internalType":"contract IStakelessGauge","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"string","name":"gaugeType","type":"string"},{"internalType":"address","name":"gauge","type":"address"}],"name":"getSingleBridgeCost","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"minRelativeWeight","type":"uint256"}],"name":"getTotalBridgeCost","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"string","name":"gaugeType","type":"string"}],"name":"getTotalGauges","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"getVault","outputs":[{"internalType":"contract IVault","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"string","name":"gaugeType","type":"string"},{"internalType":"contract IStakelessGauge","name":"gauge","type":"address"}],"name":"hasGauge","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"string","name":"gaugeType","type":"string"}],"name":"isValidGaugeType","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"string","name":"gaugeType","type":"string"},{"internalType":"contract IStakelessGauge[]","name":"gauges","type":"address[]"}],"name":"removeGauges","outputs":[],"stateMutability":"nonpayable","type":"function"}]`
-const SUBGRAPH_URL = 'https://api.studio.thegraph.com/query/75376/balancer-gauges/version/latest'
+const SUBGRAPH_URL_TEMPLATE = 'https://gateway-arbitrum.network.thegraph.com/api/[api-key]/subgraphs/id/4sESujoqmztX6pbichs4wZ1XXyYrkooMuHA8sKkYxpTn'
 const SUBGRAPH_QUERY = `{
     rootGauges (first:1000 where:{
       isKilled:false
@@ -23,8 +23,9 @@ const SUBGRAPH_QUERY = `{
   }
   }`
 
-async function getGauges() {
-    const response = await fetch(SUBGRAPH_URL, {
+async function getGauges(credentials) {
+    const subgraphUrl = SUBGRAPH_URL_TEMPLATE.replace('[api-key]', credentials.secrets.GRAPH_API_KEY);
+    const response = await fetch(subgraphUrl, {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify({query: SUBGRAPH_QUERY}),
@@ -37,13 +38,13 @@ async function getGauges() {
     return [...rootGauges, ...singleRecipientGauges]
 }
 
-exports.handler = async function (event, context) {
+exports.handler = async function (credentials, context) {
     try {
         console.log('Getting gauges from the subgraph...');
-        const gauges = await getGauges();
+        const gauges = await getGauges(credentials);
 
-        const provider = new DefenderRelayProvider(event);
-        const signer = new DefenderRelaySigner(event, provider, {speed: 'fast'});
+        const provider = new DefenderRelayProvider(credentials);
+        const signer = new DefenderRelaySigner(credentials, provider, {speed: 'fast'});
         const checkpointerContract = new ethers.Contract(GAUGE_CHECKPOINTER_ADDRESS, GAUGE_CHECKPOINTER_ABI, signer);
 
         const chains = [...new Set(gauges.map(gauge => gauge.chain))];
@@ -99,8 +100,13 @@ exports.handler = async function (event, context) {
 
 if (require.main === module) {
     require('dotenv').config();
-    const {DEFENDER_API_KEY: apiKey, DEFENDER_API_SECRET: apiSecret} = process.env;
-    exports.handler({apiKey, apiSecret})
+    const {DEFENDER_API_KEY: DEFENDER_API_KEY, DEFENDER_API_SECRET: DEFENDER_API_SECRET} = process.env;
+    const credentials = {
+        apiKey: DEFENDER_API_KEY,
+        apiSecret: DEFENDER_API_SECRET
+    };
+    credentials.secrets = {GRAPH_API_KEY: process.env.GRAPH_API_KEY};
+    exports.handler(credentials)
         .then(() => process.exit(0))
         .catch(error => {
             console.error(error);
